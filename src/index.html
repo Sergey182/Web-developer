@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.min.css " />
+    <title>Верстка сайтов</title>
+  </head>
+  <body>
+    @@include('_header.html')
+
+    <main class="main">
+      <section class="about">
+        <div class="about__wrap">
+          <div class="container">
+            <div class="about__inner">
+              <h3 class="about__me">Обо мне</h3>
+              <div class="about__inner-content">
+                <div class="about__text">
+                  <span class="about__name">Сергей Сергеев</span>
+                  <span class="about__career"
+                    >HTML верстальщик (г. Рыбинск)</span
+                  >
+                  <p class="about__desc-1">
+                    <strong>Основная специализация:</strong> Верстка сайтов,
+                    интернет магазинов и Landing Page (фиксированная, резиновая,
+                    адаптивная). Опыт работы 1 год.
+                  </p>
+                  <p class="about__desc-2">
+                    Целеустремленный, ответственный и исполнительный. Верстаю
+                    используя методологию БЭМ. Сборщик GULP. На выходе вы
+                    получаете чистый, валидный код.
+                  </p>
+                </div>
+                <div class="about__image">
+                  <img src="./img/about.jpg" alt="Моя фотография" class="about__image-pic"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="me">
+        <div class="me__wrap">
+          <div class="container">
+            <div class="me__skills">
+              <h3 class="me__title">Мои навыки</h3>
+              <div class="skills" data-percent="80%">
+                <div class="title" style="background: #ff8c00">
+                  <span>HTML</span>
+                </div>
+                <div class="skill-bar" style="background: #ff8c00"></div>
+                <div class="skills-percent">80%</div>
+              </div>
+              <div class="skills" data-percent="75%">
+                <div class="title" style="background: #00bfff">
+                  <span>CSS</span>
+                </div>
+                <div class="skill-bar" style="background: #00bfff"></div>
+                <div class="skills-percent">75%</div>
+              </div>
+              <div class="skills" data-percent="20%">
+                <div class="title" style="background: #4682b4">
+                  <span>jQuery</span>
+                </div>
+                <div class="skill-bar" style="background: #4682b4"></div>
+                <div class="skills-percent">20%</div>
+              </div>
+              <div class="skills" data-percent="55%">
+                <div class="title" style="background: #23b944">
+                  <span>SCSS</span>
+                </div>
+                <div class="skill-bar" style="background: #23b944"></div>
+                <div class="skills-percent">55%</div>
+              </div>
+              <div class="skills" data-percent="70%">
+                <div class="title" style="background: #eb1893">
+                  <span>Figma</span>
+                </div>
+                <div class="skill-bar" style="background: #eb1893"></div>
+                <div class="skills-percent">70%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="portfolio">
+        <div class="portfolio__wrap">
+          <div class="container">
+            <div class="portfolio__inner">
+              <h3 class="portfolio__inner-title">Портфолио</h3>
+              <ul class="portfolio__inner-item">
+                <li class="portfolio__inner-link">
+                  <div class="portfolio__inner-image">
+                   <a href="https://sergey182.github.io/home.github.io/"
+                    rel="nofollow"
+                    target="_blank"> <img src="./img/home.jpg" alt="" class="portfolio__inner-img">
+                  </div></a>
+                  
+                </li>
+                <li class="portfolio__inner-link">
+                  <div class="portfolio__inner-image">
+                   <a
+                    href="https://sergey182.github.io/photographer.github.io/"
+                    rel="nofollow"
+                    target="_blank"
+                    > <img src="./img/photo.jpg" alt="" class="portfolio__inner-img"></a>
+                  </div>
+                </li>
+
+                <li class="portfolio__inner-link">
+                  <div class="portfolio__inner-image">
+                   <a
+                    href="https://sergey182.github.io/movee.github.io/"
+                    rel="nofollow"
+                    target="_blank"
+                    > <img src="./img/move.jpg" alt="" class="portfolio__inner-img"></a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      </main>
+
+      <footer class="footer">
+      <section class="contacts">
+        <div class="contacts__wrap">
+          <div class="container">
+            <div class="contacts__inner">
+              <h3 class="contacts__title">
+                Контакты
+              </h3>
+              <form enctype="multipart/form-data" method="post" id="feedback-form" class="contacts__form">
+<label for="name"></label>
+<input type="text" name="name" required placeholder="Ваше имя" x-autocompletetype="name">
+<label for="contact"></label>
+<input type="email" name="contact"  required placeholder="Ваша почта" x-autocompletetype="email">
+
+<input name="file" type="file" name="file" id="input__file" class="input input__file" multiple>
+   <label for="input__file" class="input__file-button">
+      <span class="input__file-icon-wrapper"><img class="input__file-icon" src="./img/add.svg" alt="Выбрать файл" width="30"></span>
+      <span class="input__file-button-text">Выберите файл</span>
+   </label>
+
+<label for="message"></label>
+<textarea name="message" class="contacts__message" required rows="5" placeholder="Детали заявки…"></textarea>
+<input value="Отправить" type="submit" class="contacts__button">
+
+<div class="contact-social">
+ <ul class="contact-social-icon">
+ <li class="vk"> <a href="https://vk.com/alanwake7" rel="nofollow" target="_blank"><i class="fa fa-vk fa-2x" aria-hidden=
+true
+></i></a></li>
+ <li class="instagram"> <a href="https://www.instagram.com/lonely_astronaut182" rel="nofollow" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden=
+true
+></i></a></li>
+ <li class="git"> <a href="https://github.com/Sergey182" rel="nofollow" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></i></a></li>
+ </ul>
+ </div>
+</form>
+<div class="footer__content-images">
+            <div class="footer__content-img1">
+              <img src="./img/icon.png"  alt="" class="footer__content-pic1">
+            </div>
+           
+            <div class="footer__content-img2">
+              <img src="./img/icon.png" alt=""  class="footer__content-pic2">
+            </div>
+          
+          </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
