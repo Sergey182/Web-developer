@@ -1043,7 +1043,7 @@ h2 {
 
 .contacts__form {
   width: 40%;
-  min-width: 300px;
+  min-width: 250px;
   height: 500px;
   background-color: aliceblue;
   margin: auto;
@@ -1059,7 +1059,7 @@ input {
   padding: 5px;
   width: 90%;
   margin-bottom: 10px;
-  min-width: 250px;
+  min-width: 220px;
 }
 
 .input__file {
@@ -1099,7 +1099,7 @@ input {
 
 .contacts__message {
   width: 90%;
-  min-width: 250px;
+  min-width: 220px;
   padding: 5px;
 }
 
@@ -1201,7 +1201,7 @@ input {
   }
 
   h2 {
-    font-size: calc(16px + 10 * (100vw / 1200));
+    font-size: calc(12px + 14 * (100vw / 1200));
   }
 
   .header__logo {
@@ -1246,6 +1246,16 @@ input {
 
   .contacts__message {
     font-size: calc(12px + 6 * (100vw / 1200));
+  }
+}
+
+@media (max-width: 992px) {
+  .header__content-img1 {
+    left: 50%;
+  }
+
+  .footer__content-img1 {
+    left: 50%;
   }
 }
 
@@ -1301,7 +1311,7 @@ input {
   }
 
   h2 {
-    font-size: calc(16px + 17 * ((100vw - 320px) / 1200));
+    font-size: calc(12px + 23.8 * ((100vw - 320px) / 1200));
   }
 
   .header__logo {
@@ -1314,6 +1324,18 @@ input {
 
   .header__button {
     font-size: calc(16px + 6.8 * ((100vw - 320px) / 1200));
+  }
+
+  .header__content-img1 {
+    display: none;
+  }
+
+  .header__content-img2 {
+    display: none;
+  }
+
+  .header__content-img5 {
+    display: none;
   }
 
   .about__name {
@@ -1346,5 +1368,46 @@ input {
 
   .contacts__message {
     font-size: calc(12px + 10.2 * ((100vw - 320px) / 1200));
+  }
+
+  .footer__content-img1 {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .about__image {
+    width: 250px;
+  }
+
+  .about__inner-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about__text {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .footer__content-img2 {
+    display: none;
+  }
+}
+
+@media (max-width: 350px) {
+  .portfolio__inner-image {
+    width: 220px;
+    margin: auto;
+  }
+
+  .portfolio__inner-link {
+    width: 250px;
+  }
+
+  .contacts__form {
+    width: 250px;
   }
 }

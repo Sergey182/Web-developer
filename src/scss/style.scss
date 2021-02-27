@@ -48,7 +48,7 @@ h1 {
 }
 
 h2 {
-    @include adaptive-font(26, 16);
+    @include adaptive-font(26, 12);
     color: aliceblue;
     margin-bottom: 80px;
     position: relative;
@@ -59,6 +59,7 @@ h2 {
     white-space: nowrap;
     overflow: hidden;
     transform: translateY(-50%);
+   
 }
 
 /* Animation */
@@ -160,6 +161,12 @@ h2 {
     left: 60%;
     transform: rotate(80deg);
     z-index: 0;
+    @media (max-width:992px) {
+        left: 50%;
+    }
+    @media (max-width:767px) {
+        display: none;
+    }
 }
 
 .header__content-img2 {
@@ -168,6 +175,9 @@ h2 {
     top: 65%;
     left: 45%;
     transform: rotate(40deg);
+    @media (max-width:767px) {
+        display: none;
+    }
 }
 
 .header__content-img3 {
@@ -176,6 +186,9 @@ h2 {
     top: 30%;
     left: 30%;
     transform: rotate(130deg);
+    @media (max-width:350px) {
+        
+    }
 }
 
 .header__content-img4 {
@@ -192,6 +205,9 @@ h2 {
     top: 70%;
     left: 70%;
     transform: rotate(130deg);
+    @media (max-width:767px) {
+        display: none;
+    }
 }
 
 .header__content-pic1, .header__content-pic2, .header__content-pic3, .header__content-pic4, .header__content-pic5 {
@@ -308,6 +324,9 @@ h2 {
     min-width: 35%;
     min-height: 400px;
     position: relative;
+    @media (max-width:600px) {
+        width: 250px;
+    }
 }
 
 .about__image-pic {
@@ -325,6 +344,11 @@ h2 {
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
+    @media (max-width:600px) {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
 
 .about__text {
@@ -333,6 +357,9 @@ h2 {
     flex-direction: column;
     flex: 1;
     margin-right: 30px;
+    @media (max-width:600px) {
+        margin-right: 0;
+    }
 }
 
 .about__name {
@@ -467,6 +494,10 @@ h2 {
 .portfolio__inner-image {
     width: 100%;
     height: 500px;
+    @media (max-width:350px) {
+        width: 220px;
+        margin: auto;
+    }
 }
 
 .portfolio__inner-img {
@@ -490,7 +521,10 @@ h2 {
     width: 300px;
     height: 500px;
     text-align: center;
-    @include adaptive-font(20, 14);;
+    @include adaptive-font(20, 14);
+    @media (max-width: 350px) {
+        width: 250px;
+    }
 }
 
 
@@ -517,7 +551,7 @@ h2 {
 
 .contacts__form {
     width: 40%;
-    min-width: 300px;
+    min-width: 250px;
     height: 500px;
     background-color: aliceblue;
     margin:auto;
@@ -527,20 +561,25 @@ h2 {
     padding: 50px;
     border-radius: 10px;
     z-index: 10;
+    @media (max-width:350px) {
+        width: 250px;
+    }
 }
 
 input {
     padding: 5px;
     width: 90%;
     margin-bottom: 10px;
-    min-width: 250px;
+    min-width: 220px;
      @include adaptive-font(18, 12);
+  
 }
 
 .input__file {
   opacity: 0;
   visibility: hidden;
   position: absolute;
+  
 }
  
 .input__file-icon-wrapper {
@@ -577,7 +616,7 @@ input {
 
 .contacts__message {
     width: 90%;
-    min-width: 250px;
+    min-width: 220px;
     padding: 5px;
     @include adaptive-font(18, 12);
 }
@@ -642,6 +681,12 @@ input {
     top: -300px;
     left: 68%;
     transform: rotate(80deg);
+    @media (max-width:992px) {
+        left: 50%;
+    }
+    @media (max-width:767px) {
+        display: none;
+    }
     
 }
 
@@ -651,6 +696,9 @@ input {
     top: -650px;
     left: 10%;
     transform: rotate(40deg);
+    @media (max-width:380px) {
+        display: none;
+    }
     
 }
 
