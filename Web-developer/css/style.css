@@ -707,6 +707,10 @@ h2 {
   color: #ff9100;
 }
 
+.order-link {
+  color: #fff;
+}
+
 .header__content-inner {
   display: flex;
   flex-direction: column;
