@@ -79,7 +79,7 @@ function css() {
         )
         .pipe(
             autoprefixer({
-                overrideBrowserlist: ["last 5 versions"],
+                overrideBrowserlist: ["last 15 versions"],
                 cascade: true
             })
         )
