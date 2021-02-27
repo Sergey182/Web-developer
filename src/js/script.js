@@ -82,4 +82,6 @@ let inputs = document.querySelectorAll('.input__file');
       });
     });
 
+    new WOW().init();
+
 
