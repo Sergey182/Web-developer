@@ -1,3 +1,7 @@
+/**
+ * НУЖЕН РЕФАКТОРИНГ!
+ * */
+
 $(document).ready(function () {
     $('.burger-btn').on('click', function (e) {
         e.preventDefault();
@@ -10,78 +14,106 @@ $(document).ready(function () {
         });
     });
 
-$("#menu").on("click","a", function (event) {
+    $("#menu").on("click", "a", function (event) {
         event.preventDefault();
-        var id  = $(this).attr('href'),
+        let id = $(this).attr('href'),
             top = $(id).offset().top;
         $('body,html').animate({scrollTop: top}, 1500);
     });
 
-function testWebP(callback) {
+    function testWebP(callback) {
 
-var webP = new Image();
-webP.onload = webP.onerror = function () {
-callback(webP.height == 2);
-};
-webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
-}
+        let webP = new Image();
+        webP.onload = webP.onerror = function () {
+            callback(webP.height === 2);
+        };
+        webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
+    }
 
-testWebP(function (support) {
+    testWebP(function (support) {
 
-if (support == true) {
-document.querySelector('body').classList.add('webp');
-}else{
-document.querySelector('body').classList.add('no-webp');
-}
-});
-
-
-let pic1 = document.querySelector('.header__content-pic1');
-let pic2 = document.querySelector('.header__content-pic2');
-let pic3 = document.querySelector('.header__content-pic3');
-let pic4 = document.querySelector('.header__content-pic4');
-let pic5 = document.querySelector('.header__content-pic5');
-let pic6 = document.querySelector('.footer__content-pic1');
-let pic7 = document.querySelector('.footer__content-pic2');
-
-window.addEventListener('mousemove', function(e) {
-    let x = e.clientX / window.innerWidth;
-    let y = e.clientY / window.innerHeight;  
-    pic1.style.transform = 'translate(-' + x * 35 + 'px, -' + y * 35 + 'px)';
-    pic2.style.transform = 'translate(-' + x * 50 + 'px, -' + y * 50 + 'px)';
-    pic3.style.transform = 'translate(-' + x * 55 + 'px, -' + y * 55 + 'px)';
-    pic4.style.transform = 'translate(-' + x * 75 + 'px, -' + y * 75 + 'px)';
-    pic5.style.transform = 'translate(-' + x * 15 + 'px, -' + y * 15 + 'px)';
-    pic6.style.transform = 'translate(-' + x * 75 + 'px, -' + y * 75 + 'px)';
-    pic7.style.transform = 'translate(-' + x * 15 + 'px, -' + y * 15 + 'px)';
-});
-});
+        if (support === true) {
+            document.querySelector('body').classList.add('webp');
+        } else {
+            document.querySelector('body').classList.add('no-webp');
+        }
+    });
 
 
-$(".skills").each(function(){ // Используем each (циклический метод)
-  $(this).find(".skill-bar").animate({ // Создаём анимацию
-    width: $(this).attr("data-percent") // Анимируем ширину
-  },2000)
-})
+    let pic1 = document.querySelector('.header__content-pic1');
+    let pic2 = document.querySelector('.header__content-pic2');
+    let pic3 = document.querySelector('.header__content-pic3');
+    let pic4 = document.querySelector('.header__content-pic4');
+    let pic5 = document.querySelector('.header__content-pic5');
+    let pic6 = document.querySelector('.footer__content-pic1');
+    let pic7 = document.querySelector('.footer__content-pic2');
 
+    window.addEventListener('mousemove', function (e) {
+        let x = e.clientX / window.innerWidth;
+        let y = e.clientY / window.innerHeight;
+        pic1.style.transform = 'translate(-' + x * 35 + 'px, -' + y * 35 + 'px)';
+        pic2.style.transform = 'translate(-' + x * 50 + 'px, -' + y * 50 + 'px)';
+        pic3.style.transform = 'translate(-' + x * 55 + 'px, -' + y * 55 + 'px)';
+        pic4.style.transform = 'translate(-' + x * 75 + 'px, -' + y * 75 + 'px)';
+        pic5.style.transform = 'translate(-' + x * 15 + 'px, -' + y * 15 + 'px)';
+        pic6.style.transform = 'translate(-' + x * 75 + 'px, -' + y * 75 + 'px)';
+        pic7.style.transform = 'translate(-' + x * 15 + 'px, -' + y * 15 + 'px)';
+    });
 
-let inputs = document.querySelectorAll('.input__file');
+    function scrollTracking() {
+        let skills = $('.me');
+        let wt = $(window).scrollTop();
+        let wh = $(window).height();
+        let et = skills.offset().top;
+        let eh = skills.outerHeight();
+
+        if (et >= wt && et + eh <= wh + wt) {
+            $(".skills").each(function () { // Используем each (циклический метод)
+                $(this).find(".skill-bar").animate({ // Создаём анимацию
+                    width: $(this).attr("data-percent") // Анимируем ширину
+                }, 2000)
+            })
+        }
+    }
+
+    $(window).scroll(function () {
+        scrollTracking();
+    });
+
+    let inputs = document.querySelectorAll('.input__file');
     Array.prototype.forEach.call(inputs, function (input) {
-      let label = input.nextElementSibling,
-        labelVal = label.querySelector('.input__file-button-text').innerText;
-  
-      input.addEventListener('change', function (e) {
-        let countFiles = '';
-        if (this.files && this.files.length >= 1)
-          countFiles = this.files.length;
-  
-        if (countFiles)
-          label.querySelector('.input__file-button-text').innerText = 'Выбрано файлов: ' + countFiles;
-        else
-          label.querySelector('.input__file-button-text').innerText = labelVal;
-      });
+        let label = input.nextElementSibling,
+            labelVal = label.querySelector('.input__file-button-text').innerText;
+
+        input.addEventListener('change', function (e) {
+            let countFiles = '';
+            if (this.files && this.files.length >= 1)
+                countFiles = this.files.length;
+
+            if (countFiles)
+                label.querySelector('.input__file-button-text').innerText = 'Выбрано файлов: ' + countFiles;
+            else
+                label.querySelector('.input__file-button-text').innerText = labelVal;
+        });
+    });
+
+    $(document).on('submit', '.contacts__form', function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "./php/form.php",
+            dataType: 'script',
+            data: new FormData(this),
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                let jsonData = JSON.parse(response);
+                alert(jsonData['response']);
+            }
+        });
     });
 
     new WOW().init();
+});
 
 
